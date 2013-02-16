@@ -4,7 +4,7 @@ class Test(unittest.TestCase):
         print('Luck!')
     def test2(self):
         print('Fuck!')
-        assert True
+        assert False
         
         
     
