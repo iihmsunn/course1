@@ -19,7 +19,7 @@ class sevenStar:
         self.rotation = rotation
         self.points = []
         for i in xrange(7):
-            x = self.radius+math.cos((i+1)*2*math.pi/7+rotation)+self.center[0]
+            x = self.radius*math.cos((i+1)*2*math.pi/7+rotation)+self.center[0]
             y = self.radius*math.sin((i+1)*2*math.pi/7+rotation)+self.center[1]
             self.points.append([x,y])
 
