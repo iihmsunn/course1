@@ -170,3 +170,5 @@ INSTALLED_APPS = (
 #         },
 #     }
 # }
+TEST_RUNNER = 'juxd.JUXDTestSuiteRunner'
+JUXD_FILENAME = os.path.join(PROJECT_ROOT, "test.xml")
