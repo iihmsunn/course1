@@ -1,0 +1,22 @@
+{% extends "layout_right.html" %}
+{% block title %}{{page_title}}{% endblock %}
+{% block head %}
+    {{ block.super }}
+
+{% endblock %}
+{% block content %}
+    
+    <div class="hero-unit">
+              <h2><a href="/athlete/{{athlete.id}}">{{athlete.name}}</a></h2>
+              <h4>Country: {{athlete.country}}</h4>
+              <br>
+              <h4>Additional information</h4>
+              <p>{{ athlete.info }}</p>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        prettyPrint();
+      });
+    </script>
+
+{% endblock %}

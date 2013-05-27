@@ -1,0 +1,15 @@
+{% extends "layout_right.html" %}
+{% block title %}Welcome To Biathlon App{% endblock %}
+{% block head %}
+    {{ block.super }}
+{% endblock %}
+{% block content %}
+  <div>
+      {% for event in events %}
+      <div class="hero-unit">
+        <h3><a href="/event/{{event.id}}">{{event.name}}</a></h3>
+        <h4>{{event.date}}</h4>
+      </div>
+      {% endfor %}
+  </div>
+{% endblock %}

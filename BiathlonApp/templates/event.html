@@ -1,0 +1,28 @@
+{% extends "layout_right.html" %}
+{% block title %}{{page_title}}{% endblock %}
+{% block head %}
+    {{ block.super }}
+
+{% endblock %}
+{% block content %}
+    
+    <div class="hero-unit">
+              <h2><a href="/event/{{event.id}}">{{event.name}}</a></h2>
+              <h4>Event date: {{event.date}}</h4>
+			  <h4>Track: <a href="/track/{{event.track.id}}">{{event.track}}</a></h4>
+			  <br>
+			  <h4>Athletes:</h4>
+			  {% for result in results %}<li><a href="/athlete/{{result.0.athlete.id}}">{{result.0.athlete.name}}, {{result.0.athlete.country}} - {{result.1}}</a></li>{% empty %}
+			  {% for athlete in event.athletes.all %}<li><a href="/athlete/{{athlete.id}}">{{athlete.name}}, {{athlete.country}}</a></li>{% endfor %}
+			  {% endfor %}
+              <br>
+              <h4>Additional information</h4>
+              <p>{{ event.info }}</p>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        prettyPrint();
+      });
+    </script>
+
+{% endblock %}
